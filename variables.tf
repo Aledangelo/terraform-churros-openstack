@@ -17,3 +17,7 @@ variable "flavor" {
 variable "availability_zone" {
 	default = "nova"
 }
+
+variable "server_name" {
+	default = "churros_server"
+}

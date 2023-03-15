@@ -5,8 +5,8 @@ resource "openstack_identity_user_v3" "user" {
 }
 
 # Add admin role to user on project
-resource "openstack_identity_role_assignment_v3" "example_admin" {
-  user_id    = openstack_identity_user_v3.example_user.id
+resource "openstack_identity_role_assignment_v3" "user_admin" {
+  user_id    = openstack_identity_user_v3.user.id
   project_id = openstack_identity_project_v3.project.id
   role_name  = "admin"
 }
