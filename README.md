@@ -29,3 +29,5 @@ You can delete your churros server with this command
 ```
 $ terraform destroy
 ```
+
+If you want to improve this repo or create your own terraform project check [this](https://registry.terraform.io/namespaces/terraform-provider-openstack), it could be helpfull.

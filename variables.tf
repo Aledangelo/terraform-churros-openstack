@@ -2,14 +2,15 @@ variable "admin_user_name" {}
 variable "admin_tenant_name" {}
 variable "admin_password" {}
 variable "admin_auth_url" {}
-variable admin_project_domain_name {}
+variable "admin_project_domain_name" {}
 variable "admin_domain_name" {}
 
 variable "user_user_name" {}
 variable "user_tenant_name" {}
 variable "user_user_password" {}
 variable "user_auth_url" {}
-
+variable "user_domain_name" {}
+variable "user_project_domain_name" {}
 
 variable "flavor" {
 	default = "m1.tiny"
@@ -42,6 +43,10 @@ variable "router_name" {
 	default = "churros_router"
 }
 
+variable "public_subnet" {
+	default = "public_subnet"		# Change this with your public subnet name
+}
+
 variable "subnet_name" {
 	default = "churros_subnet"
 }
@@ -56,10 +61,19 @@ variable "security_group_name" {
 }
 
 # Project
-variable "project_name" {
-	default = "churros_project"
+# variable "project_name" {
+# 	default = "churros_project"
+# }
+
+# variable "domain_name" {
+# 	default = "churros_domain"
+# }
+
+# Keypair
+variable "keypair_name" {
+	default = "churros_keypair"
 }
 
-variable "domain_name" {
-	default = "churros_domain"
+variable "ssh_key_file" {
+	default = ".ssh/id_rsa"
 }

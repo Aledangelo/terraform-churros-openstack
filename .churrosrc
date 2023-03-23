@@ -1,0 +1,9 @@
+unset OS_SERVICE_TOKEN
+export OS_USERNAME=churros
+export OS_PASSWORD='churr0s'
+export OS_AUTH_URL=http://localhost:5000/v3
+export PS1='[\u@\h \W(churros)]$ '
+export OS_PROJECT_NAME=churros
+export OS_USER_DOMAIN_NAME=churros
+export OS_PROJECT_DOMAIN_NAME=churros
+export OS_IDENTITY_API_VERSION=3
