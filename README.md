@@ -6,7 +6,7 @@ Simple terraform configuration to run an openstack server named Churros.
 
 
 ## Variables
-Change values in `terraform.tfvars` file with your openstack credentials.
+Change values in `terraform.tfvars` and `.adminrc` files with your openstack admin credentials.
 
 ## Usage
 In order to run an openstack server, you have to run this commands in the root project's directory:
