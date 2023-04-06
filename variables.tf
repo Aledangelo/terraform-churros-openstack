@@ -12,10 +12,6 @@ variable "user_auth_url" {}
 variable "user_domain_name" {}
 variable "user_project_domain_name" {}
 
-variable "flavor" {
-	default = "m1.tiny"
-}
-
 variable "availability_zone" {
 	default = "nova"
 }
@@ -27,6 +23,11 @@ variable "server_name" {
 
 # Image
 variable "image_name" {
+	default = "churros"
+}
+
+# Flavor
+variable "flavor_name" {
 	default = "churros"
 }
 
