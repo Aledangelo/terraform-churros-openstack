@@ -1,12 +1,3 @@
-# Set public network external = true
-/*
-resource "openstack_networking_network_v2" "public_network" {
-  provider = openstack.admin
-  name = "public"
-  external = true
-}
-*/
-
 # Define the network resource
 resource "openstack_networking_network_v2" "network" {
   provider = openstack.churros
@@ -29,18 +20,6 @@ resource "openstack_networking_subnet_v2" "subnet" {
   ]
 }
 
-# Use public subnet
-/*
-resource "openstack_networking_subnet_v2" "public_subnet" {
-  provider = openstack.churros
-  name       = "${var.public_subnet}"
-  network_id = openstack_networking_network_v2.public_network.id
-  depends_on = [
-      openstack_identity_role_assignment_v3.user_admin
-    ]
-}
-*/
-
 # Define the router resource
 resource "openstack_networking_router_v2" "router" {
   provider = openstack.churros
@@ -59,15 +38,3 @@ resource "openstack_networking_router_interface_v2" "interface" {
     openstack_identity_role_assignment_v3.user_admin
   ]
 }
-
-# Attach public interface to router
-/*
-resource "openstack_networking_router_interface_v2" "public_interface" {
-  provider = openstack.churros
-  router_id   = openstack_networking_router_v2.router.id
-  subnet_id   = openstack_networking_subnet_v2.public_subnet.id
-  depends_on = [
-      openstack_identity_role_assignment_v3.user_admin
-    ]
-}
-*/

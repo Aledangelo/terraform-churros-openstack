@@ -39,14 +39,6 @@ variable "network_name" {
 	default = "churros_network"
 }
 
-variable "router_name" {
-	default = "churros_router"
-}
-
-variable "public_subnet" {
-	default = "public_subnet"		# Change this with your public subnet name
-}
-
 variable "subnet_name" {
 	default = "churros_subnet"
 }
@@ -55,19 +47,27 @@ variable "subnet_cidr" {
 	default = "10.0.0.0/24"
 }
 
+variable "router_name" {
+	default = "churros_router"
+}
+
+# Public Network
+variable "existing_network" {
+	default = "public"				# Change this with your public network name
+}
+
+variable "existing_subnet" {
+	default = "public_subnet"		# Change this with your public subnet name
+}
+
+variable "public_router_name" {
+	default = "public_router"
+}
+
 # Security Group
 variable "security_group_name" {
 	default = "churros_sec_group"
 }
-
-# Project
-# variable "project_name" {
-# 	default = "churros_project"
-# }
-
-# variable "domain_name" {
-# 	default = "churros_domain"
-# }
 
 # Keypair
 variable "keypair_name" {
