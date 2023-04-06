@@ -12,6 +12,11 @@ resource "openstack_networking_network_v2" "network" {
   provider = openstack.churros
   name = "${var.network_name}"
   tenant_id = openstack_identity_project_v3.project.id
+  shared = true
+  segments {
+      physical_network = "physnet1"
+      network_type = "flat"
+  }
   depends_on = [
     openstack_identity_role_assignment_v3.user_admin,
     openstack_identity_project_v3.project
