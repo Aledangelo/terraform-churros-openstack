@@ -5,7 +5,7 @@ resource "openstack_compute_instance_v2" "churros" {
     name = "${var.server_name}"
     image_name = "${var.image_name}"
     availability_zone = "${var.availability_zone}"
-    flavor_name = "${var.flavor}"
+    flavor_name = "${var.flavor_name}"
     security_groups = ["${var.security_group_name}"]
     network {
         name = "${var.existing_network}"

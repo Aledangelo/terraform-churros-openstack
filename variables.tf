@@ -12,8 +12,8 @@ variable "user_auth_url" {}
 variable "user_domain_name" {}
 variable "user_project_domain_name" {}
 
-variable "flavor" {
-	default = "m1.tiny"
+variable "flavor_name" {
+	default = "churros_flavor"
 }
 
 variable "availability_zone" {
