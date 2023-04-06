@@ -8,6 +8,31 @@ Simple terraform configuration to run an openstack server named Churros.
 ## Variables
 Change values in `terraform.tfvars` and `.adminrc` files with your openstack admin credentials.
 
+## Configuration
+
+### Install Terraform
+Install [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) by following the steps described on the official site.
+
+### Generate SSH keys
+Go in `.ssh/` direcotry and run `ssh-keygen` in order to generate a keypair.
+```
+$ cd .ssh/
+$ ssh-keygen -t rsa
+```
+The keys must be named `id_rsa` and `id_rsa.pub`, alternatively you have to change the variable name in `variables.tf`.
+```
+...
+
+# Keypair
+variable "keypair_name" {
+	default = "churros_keypair"
+}
+
+variable "ssh_key_file" {
+	default = ".ssh/id_rsa"     <-- Change this variable
+}
+```
+
 ## Usage
 In order to run an openstack server, you have to run this commands in the root project's directory:
 * First of all, initialize the project
