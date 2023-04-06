@@ -18,15 +18,6 @@ data "openstack_networking_subnet_v2" "public_subnet" {
     ]
 }
 
-# Define the router resource
-resource "openstack_networking_router_v2" "public_router" {
-  provider = openstack.churros
-  name = "${var.public_router_name}"
-  depends_on = [
-    openstack_identity_role_assignment_v3.user_admin
-  ]
-}
-
 # Attach public interface to router
 resource "openstack_networking_router_interface_v2" "public_interface" {
   provider = openstack.churros

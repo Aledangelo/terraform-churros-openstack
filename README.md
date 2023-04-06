@@ -52,11 +52,11 @@ Also, to use the pre-existing network, make sure the network and subnet names in
 
 # Public Network
 variable "existnig_network" {
-	default = "public"				# Change this with your network name
+	default = "public"
 }
 
 variable "existing_subnet" {
-	default = "public_subnet"		# Change this with your subnet name
+	default = "public_subnet"
 }
 ...
 ```
