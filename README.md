@@ -33,11 +33,11 @@ variable "ssh_key_file" {
 ```
 
 ### Network
-The configuration involves the use of two networks, a pre-existing one and one created at the moment via terraform. Both are used in the instance, but you can choose whether to disable one or both by removing out these lines in the file `instance.tf`.
+The configuration involves the use of two networks, a pre-existing one and one created at the moment via terraform. Both are used in the instance, but you can choose whether to disable one or both by removing out these lines in the `instance.tf` file.
 ```
 ...
 network {
-        name = "${var.public_network}"
+    name = "${var.existing_network}"
 }
 network {
 	name = "${var.network_name}"
@@ -45,7 +45,7 @@ network {
 ...
 ```
 
-Also, to use the pre-existing network, make sure the network and subnet names in `variables.tf` are correct. 
+Also, to use the pre-existing network, make sure the network and subnet names in `variables.tf` file are correct. 
 
 ```
 ...

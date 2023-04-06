@@ -8,7 +8,7 @@ resource "openstack_compute_instance_v2" "churros" {
     flavor_name = "${var.flavor}"
     security_groups = ["${var.security_group_name}"]
     network {
-        name = "${var.public_network}"
+        name = "${var.existing_network}"
     }
     network {
         name = "${var.network_name}"

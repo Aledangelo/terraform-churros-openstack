@@ -51,7 +51,7 @@ variable "router_name" {
 	default = "churros_router"
 }
 
-# Public Network
+# Existing Network
 variable "existing_network" {
 	default = "public"				# Change this with your public network name
 }
@@ -75,5 +75,5 @@ variable "keypair_name" {
 }
 
 variable "ssh_key_file" {
-	default = ".ssh/id_rsa"
+	default = ".ssh/id_rsa.pub"
 }
